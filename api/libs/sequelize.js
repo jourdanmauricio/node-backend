@@ -8,7 +8,7 @@ const URI = config.dbUrl;
 const options = {
   dialect: 'postgres',
   dialectModule: require('pg'),
-  ssl: true,
+  ssl: false,
   logging: !config.isProd ? console.log : false,
 };
 
