@@ -9,6 +9,7 @@ const options = {
   dialect: 'postgres',
   dialectModule: require('pg'),
   ssl: true,
+  sslmode: false,
   logging: !config.isProd ? console.log : false,
 };
 
