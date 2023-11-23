@@ -5,8 +5,6 @@ const setupModels = require('../db/models');
 
 const URI = config.dbUrl;
 
-console.log('URI!!!!!!!!!!!!!', URI);
-
 const options = {
   dialect: 'postgres',
   dialectModule: require('pg'),

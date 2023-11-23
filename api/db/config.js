@@ -1,7 +1,5 @@
 const { config } = require('../config/config');
 
-console.log('URI!!!!!!!!!!!!!', config.dbUrl);
-
 module.exports = {
   development: {
     url: config.dbUrl,
