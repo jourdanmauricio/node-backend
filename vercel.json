@@ -10,5 +10,6 @@
       "src": "/api/index.js",
       "use": "@now/node"
     }
-  ]
+  ],
+  "installCommand": "npm install && npm run migrations:run"
 }
