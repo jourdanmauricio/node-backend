@@ -1,4 +1,6 @@
 const { Sequelize } = require('sequelize');
+const pg = require('pg');
+
 const { config } = require('../config/config');
 const setupModels = require('../db/models');
 
@@ -6,6 +8,7 @@ const URI = config.dbUrl;
 
 const options = {
   dialect: 'postgres',
+  dialectModule: pg,
   logging: !config.isProd ? console.log : false,
 };
 
