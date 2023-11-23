@@ -7,8 +7,7 @@
   ],
   "builds": [
     {
-      "src": "npm run migrations:run && /api/index.js",
-      "use": "@now/node"
+      "src": "npm run migrations:run && node /api/index.js"
     }
   ]
 }
