@@ -13,7 +13,7 @@ module.exports = {
     });
   },
 
-  //down: async (queryInterface) => {
-  // await queryInterface.dropTable(CUSTOMER_TABLE);
-  //},
+  down: async () => {
+    // await queryInterface.dropTable(CUSTOMER_TABLE);
+  },
 };

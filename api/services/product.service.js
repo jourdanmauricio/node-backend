@@ -16,7 +16,11 @@ class ProductsService {
       include: ['category'],
       where: {},
     };
+
+    console.log('Query', query);
     const { limit, offset } = query;
+    const { price_min, price_max } = query;
+
     if (limit && offset) {
       options.limit = limit;
       options.offset = offset;
@@ -27,7 +31,6 @@ class ProductsService {
       options.where.price = price;
     }
 
-    const { price_min, price_max } = query;
     if (price_min && price_max) {
       options.where.price = {
         [Op.gte]: price_min,
