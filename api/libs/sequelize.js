@@ -15,9 +15,9 @@ const options = {
 };
 
 if (config.isProd) {
-  // options.dialectOptions = {
-  //   ssl: { rejectUnauthorized: false },
-  // };
+  options.dialectOptions = {
+    ssl: { rejectUnauthorized: false },
+  };
 }
 const sequelize = new Sequelize(URI, options);
 
