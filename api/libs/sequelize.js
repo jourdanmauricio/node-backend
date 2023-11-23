@@ -10,6 +10,7 @@ console.log('URI!!!!!!!!!!!!!', URI);
 const options = {
   dialect: 'postgres',
   dialectModule: require('pg'),
+  ssl: true,
   logging: !config.isProd ? console.log : false,
 };
 

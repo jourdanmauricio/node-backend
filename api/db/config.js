@@ -9,6 +9,7 @@ module.exports = {
   },
   production: {
     url: config.dbUrl,
+    ssl: true,
     dialect: 'postgres',
     dialectModule: require('pg'),
     // dialectOptions: {
