@@ -1,10 +1,11 @@
 const { Sequelize } = require('sequelize');
-// const { pg } = require('pg');
 
 const { config } = require('../config/config');
 const setupModels = require('../db/models');
 
 const URI = config.dbUrl;
+
+console.log('URI!!!!!!!!!!!!!', URI);
 
 const options = {
   dialect: 'postgres',

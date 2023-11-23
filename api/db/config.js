@@ -1,5 +1,6 @@
 const { config } = require('../config/config');
-// const { pg } = require('pg');
+
+console.log('URI!!!!!!!!!!!!!', config.dbUrl);
 
 module.exports = {
   development: {
