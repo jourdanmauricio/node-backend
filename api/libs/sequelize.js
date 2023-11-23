@@ -9,13 +9,12 @@ const options = {
   dialect: 'postgres',
   dialectModule: require('pg'),
   ssl: true,
-  sslmode: false,
   logging: !config.isProd ? console.log : false,
 };
 
 if (config.isProd) {
   options.dialectOptions = {
-    ssl: { rejectUnauthorized: false, requestCert: true },
+    ssl: { rejectUnauthorized: false, sslmode: false },
   };
 }
 const sequelize = new Sequelize(URI, options);

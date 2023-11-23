@@ -12,7 +12,7 @@ module.exports = {
     dialect: 'postgres',
     dialectModule: require('pg'),
     dialectOptions: {
-      ssl: { rejectUnauthorized: false },
+      ssl: { rejectUnauthorized: false, sslmode: false },
       requestCert: true,
     },
   },
