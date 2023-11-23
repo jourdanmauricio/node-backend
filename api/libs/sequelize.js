@@ -8,13 +8,13 @@ const URI = config.dbUrl;
 const options = {
   dialect: 'postgres',
   dialectModule: require('pg'),
-  ssl: false,
+  ssl: true,
   logging: !config.isProd ? console.log : false,
 };
 
 if (config.isProd) {
   options.dialectOptions = {
-    ssl: { rejectUnauthorized: true },
+    ssl: { rejectUnauthorized: false },
   };
 }
 const sequelize = new Sequelize(URI, options);
