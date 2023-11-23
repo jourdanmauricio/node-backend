@@ -12,6 +12,7 @@ module.exports = {
     dialectModule: require('pg'),
     dialectOptions: {
       ssl: { rejectUnauthorized: false },
+      requestCert: true,
     },
   },
 };
