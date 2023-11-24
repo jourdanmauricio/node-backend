@@ -10,7 +10,8 @@ const {
   ormErrorHandler,
 } = require('./middlewares/error.handler');
 
-const port = config.PORT;
+const port = config.port;
+console.log('config.PORT', config.PORT);
 const app = express();
 
 app.use(express.json());
@@ -40,6 +41,11 @@ app.use(ormErrorHandler);
 app.use(errorHandler);
 
 app.listen(port, () => {
-  console.log('Server ready -> http://localhost:' + port + '/api/');
+  if (config.isProd) {
+    console.log(`Server ready -> ${config.backUrl}/api`);
+  } else {
+    console.log('PORT', port);
+    console.log(`Server ready -> ${config.backUrl}:${port}/api`);
+  }
   console.log('dbUrl', config.dbUrl);
 });

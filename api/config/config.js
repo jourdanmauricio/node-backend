@@ -10,6 +10,7 @@ const config = {
   dbPass: process.env.DB_PASS,
   dbPort: process.env.DB_PORT,
   dbUrl: process.env.DATABASE_URL,
+  backUrl: process.env.RAILWAY_PUBLIC_DOMAIN,
 };
 
 module.exports = { config };
