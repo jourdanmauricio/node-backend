@@ -9,7 +9,7 @@ const config = {
   dbUser: process.env.DB_USER,
   dbPass: process.env.DB_PASS,
   dbPort: process.env.DB_PORT,
-  dbUrl: process.env.POSTGRES_URL,
+  dbUrl: process.env.DATABASE_URL,
 };
 
 module.exports = { config };
