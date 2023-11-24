@@ -1,5 +1,7 @@
 const express = require('express');
 const cors = require('cors');
+
+const { config } = require('./config/config');
 const routerApi = require('./routes');
 const {
   logErrors,
@@ -8,7 +10,7 @@ const {
   ormErrorHandler,
 } = require('./middlewares/error.handler');
 
-const port = 3000;
+const port = config.PORT;
 const app = express();
 
 app.use(express.json());
@@ -39,4 +41,5 @@ app.use(errorHandler);
 
 app.listen(port, () => {
   console.log('Server ready -> http://localhost:' + port + '/api/');
+  console.log('dbUrl', config.dbUrl);
 });
