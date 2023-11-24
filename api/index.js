@@ -38,5 +38,5 @@ app.use(ormErrorHandler);
 app.use(errorHandler);
 
 app.listen(port, () => {
-  console.log('Server ready -> http://localhost:' + port);
+  console.log('Server ready -> http://localhost:' + port + '/api');
 });
