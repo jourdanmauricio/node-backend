@@ -9,13 +9,14 @@ const {
   errorHandler,
   ormErrorHandler,
 } = require('./middlewares/error.handler');
+const { checkApiKey } = require('./middlewares/auth.handler');
 
 const port = config.port;
-console.log('config.PORT', config.PORT);
 const app = express();
 
 app.use(express.json());
 app.use(cors());
+require('./utils/auth');
 
 // const whiteList = ['http://localhost:3000', 'https://my-app.com.ar'];
 // const options = {
@@ -28,6 +29,10 @@ app.use(cors());
 //   },
 // };
 // app.use(cors(options));
+
+app.get('/api/v1/health', checkApiKey, (req, res) => {
+  res.send('Hola mi server en Express');
+});
 
 app.get('/api', (req, res) => {
   res.send('Hola mi server en Express');
@@ -42,10 +47,8 @@ app.use(errorHandler);
 
 app.listen(port, () => {
   if (config.isProd) {
-    console.log(`Server ready -> ${config.backUrl}/api`);
+    console.log(`Server ready -> ${config.backUrl}/api/health`);
   } else {
-    console.log('PORT', port);
-    console.log(`Server ready -> ${config.backUrl}:${port}/api`);
+    console.log(`Server ready -> ${config.backUrl}:${port}/api/health`);
   }
-  console.log('dbUrl', config.dbUrl);
 });

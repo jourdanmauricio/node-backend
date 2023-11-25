@@ -6,8 +6,10 @@ const {
   createOrderSchema,
   addItemSchema,
 } = require('../schemas/order.schema');
+
 const router = express.Router();
 const service = new OrderService();
+
 router.get(
   '/:id',
   validatorHandler(getOrderSchema, 'params'),
@@ -21,6 +23,7 @@ router.get(
     }
   },
 );
+
 router.post(
   '/',
   validatorHandler(createOrderSchema, 'body'),
@@ -34,6 +37,7 @@ router.post(
     }
   },
 );
+
 router.post(
   '/add-item',
   validatorHandler(addItemSchema, 'body'),
